@@ -44,5 +44,10 @@ public class GreetingMessageController{
         logger.info("Modify the existing message : {} ",id);
         return greetingMessageService.modifyMessage(id, message);
     }
+    @DeleteMapping("/{id}")
+    public boolean deleteMessage(@PathVariable Integer id){
+        logger.info("Delete the message : {} ",id);
+        return greetingMessageService.deleteMessage(id);
+    }
 
 }
