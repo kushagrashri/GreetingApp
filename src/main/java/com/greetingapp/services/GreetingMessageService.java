@@ -43,5 +43,11 @@ public class GreetingMessageService {
                 .map(greetingMessageEntity -> greetingMessageEntity.getMessage())
                 .collect(Collectors.toList());
     }
+    public GreetingMessageDTO modifyMessage(Integer id, String message) {
+        GreetingMessageEntity greetingMessageEntity = greetingRepository.findById(id).orElse(null);
+        if(greetingMessageEntity == null) return null;
+        greetingMessageEntity.setMessage(message);
+        return modelMapper.map(greetingMessageEntity,GreetingMessageDTO.class);
+    }
 
 }
