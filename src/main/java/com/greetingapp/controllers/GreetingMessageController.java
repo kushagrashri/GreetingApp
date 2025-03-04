@@ -29,5 +29,10 @@ public class GreetingMessageController{
         logger.info("Get the list of all the messages");
         return greetingMessageService.getAllMessages();
     }
+    @GetMapping("/{id}")
+    public String getMessageById(@PathVariable Integer id){
+        logger.info("Get the message : {} ",id);
+        return greetingMessageService.getMessageById(id);
+    }
 
 }
