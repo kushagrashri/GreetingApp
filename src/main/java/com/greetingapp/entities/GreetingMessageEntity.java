@@ -16,4 +16,8 @@ public class GreetingMessageEntity {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
     private String message;
+
+    public String getMessage() {
+        return message;
+    }
 }

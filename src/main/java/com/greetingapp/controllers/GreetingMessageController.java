@@ -34,5 +34,10 @@ public class GreetingMessageController{
         logger.info("Get the message : {} ",id);
         return greetingMessageService.getMessageById(id);
     }
+    @GetMapping("/getAllMessages")
+    public List<String> getAllMessage(){
+        logger.info("Get All messages Only");
+        return greetingMessageService.getAllMessage();
+    }
 
 }
